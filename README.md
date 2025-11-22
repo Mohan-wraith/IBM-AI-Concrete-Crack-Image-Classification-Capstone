@@ -59,6 +59,7 @@ Due to GitHub's file size limits, the trained model weights are hosted externall
 ### 1. Installation
 ```bash
 pip install tensorflow opencv-python matplotlib numpy
+
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import numpy as np
@@ -87,115 +88,11 @@ def predict_image(file_path):
 print(predict_image('test_wall.jpg'))
 
 
-
+📂 Repository Structure
 ├── IBM AI Concrete Crack Image Classification.ipynb  # Main Source Code
 ├── test_predictions.csv                              # Raw Inference Results
 ├── README.md                                         # Project Documentation
 └── (External Link) vgg16_concrete_final.keras        # Trained Model Weights
-
-
-
-Here is a "Peak Professional" README file. It is structured to look like a serious software product, using industry-standard formatting, badges, and clear documentation.
-
-Instructions:
-
-Create a file named README.md in your GitHub repository.
-
-Copy and paste the code below into it.
-
-Important: I have added a section called ## 📥 Model Download. You must paste your Google Drive link there (since the file was too big for the web upload).
-
-Copy this code:
-Markdown
-
-# 🏗️ Concrete Crack Detection System
-### IBM AI Engineering Capstone Project
-
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange)
-![Status](https://img.shields.io/badge/Status-Completed-success)
-![License](https://img.shields.io/badge/License-MIT-green)
-
-**Author:** M.MOHAN
-**Date:** November 2025
-
----
-
-## 📖 Executive Summary
-This project delivers a production-ready Deep Learning solution for automated structural health monitoring. By leveraging Transfer Learning with **VGG16** and **ResNet50**, the system detects surface cracks in concrete structures with **>99% accuracy**.
-
-The final deployed model uses a custom-optimized **VGG16 architecture** that achieves state-of-the-art performance while remaining **40% lighter** than standard implementations, making it suitable for edge deployment on mobile inspection devices.
-
----
-
-## 📊 Key Results
-
-| Model Architecture | Accuracy | Precision | Recall | File Size | Verdict |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **VGG16 (Optimized)** | **100%** | **1.00** | **1.00** | **~57 MB** | 🏆 **Production** |
-| ResNet50 | 100% | 1.00 | 1.00 | ~96 MB | Archived |
-
-> **Optimization Note:** The VGG16 model was modified to use **Global Average Pooling (GAP)** instead of standard flattening, significantly reducing parameter count without sacrificing spatial feature extraction capabilities.
-
----
-
-## 🧠 Explainable AI (Grad-CAM)
-To ensure reliability, **Grad-CAM (Gradient-weighted Class Activation Mapping)** was implemented to visualize the model's decision-making process.
-
-* **Positive Detection:** The model accurately highlights the specific crack geometry (Red/Yellow regions).
-* **Negative Detection:** The model focuses on broad surface textures, confirming no specific "crack features" were activated.
-
-*(Add a screenshot of your Grad-CAM result here if available)*
-
----
-
-## 📥 Model Download
-Due to GitHub's file size limits, the trained model weights are hosted externally.
-
-* **VGG16 Final Model (.keras):** [🔗 **CLICK HERE TO DOWNLOAD MODEL**](PASTE_YOUR_GOOGLE_DRIVE_LINK_HERE)
-
----
-
-## 🛠️ Tech Stack
-* **Core Framework:** TensorFlow / Keras
-* **Data Processing:** NumPy, Pandas, OpenCV
-* **Visualization:** Matplotlib, Seaborn
-* **Techniques:** Transfer Learning, Data Augmentation, Early Stopping
-
----
-
-## 🚀 Usage Guide
-
-### 1. Installation
-```bash
-pip install tensorflow opencv-python matplotlib numpy
-2. Running Inference
-The project includes a standalone prediction function predict_crack() capable of processing raw images from the internet.
-
-Python
-
-from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing import image
-import numpy as np
-
-# Load the optimized model
-model = load_model('vgg16_concrete_final.keras')
-
-def predict_image(file_path):
-    img = image.load_img(file_path, target_size=(224, 224))
-    img_array = image.img_to_array(img)
-    img_batch = np.expand_dims(img_array, axis=0)
-    
-    # Preprocess (VGG16 specific)
-    img_preprocessed = tf.keras.applications.vgg16.preprocess_input(img_batch.copy())
-    
-    prediction = model.predict(img_preprocessed)
-    confidence = prediction[0][1]
-    
-    if confidence > 0.5:
-        return f"⚠️ CRACK DETECTED ({confidence:.2%} confidence)"
-    else:
-        return f"✅ Surface Intact ({1-confidence:.2%} confidence)"
 
 📜 License
 This project is open-source and available under the MIT License.
