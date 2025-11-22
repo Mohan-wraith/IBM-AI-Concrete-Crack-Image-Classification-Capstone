@@ -35,7 +35,8 @@ To ensure reliability, **Grad-CAM (Gradient-weighted Class Activation Mapping)**
 * **Positive Detection:** The model accurately highlights the specific crack geometry (Red/Yellow regions).
 * **Negative Detection:** The model focuses on broad surface textures, confirming no specific "crack features" were activated.
 
-*(Add a screenshot of your Grad-CAM result here if available)*
+<img width="1225" height="1790" alt="image" src="https://github.com/user-attachments/assets/74c8a95f-72b0-47a4-b996-981af81a9f65" />
+
 
 ---
 
