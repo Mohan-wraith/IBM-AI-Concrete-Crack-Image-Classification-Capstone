@@ -1,7 +1,7 @@
 # 🏗️ Concrete Crack Detection System
 ### IBM AI Engineering Capstone Project
 
-**Author:** M.MOHAN | **Date:** November 2025
+**Author:** M.MOHAN | **Date:** August 2025
 
 ---
 
