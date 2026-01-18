@@ -73,7 +73,8 @@ Due to GitHub's file size limits, the trained model weights are hosted externall
 
 ### 1. Installation
 ```bash
-pip install tensorflow opencv-python matplotlib numpy```
+pip install tensorflow opencv-python matplotlib numpy
+```
 
 ###2. Inference Script
 ```Python
@@ -102,12 +103,19 @@ def predict_image(file_path):
         return f"✅ Surface Intact ({1-confidence:.2%} confidence)"
 
 # Test
-print(predict_image('test_wall.jpg'))```
+print(predict_image('test_wall.jpg'))
+```
 
 📂 Repository Structure
+```
 ├── IBM AI Concrete Crack Image Classification.ipynb  # Main Source Code
 ├── test_predictions.csv                              # Raw Inference Results
 ├── README.md                                         # Project Documentation
 └── (External Link) vgg16_concrete_final.keras        # Trained Model Weights
+```
+
+
 📜 License
+```
 This project is open-source and available under the MIT License.
+```
