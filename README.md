@@ -106,7 +106,8 @@ def predict_image(file_path):
 print(predict_image('test_wall.jpg'))
 ```
 
-### 📂 Repository Structure
+## 📂 Repository Structure
+```text
 ├── IBM AI Concrete Crack Image Classification.ipynb  # Main Source Code
 ├── test_predictions.csv                              # Raw Inference Results
 ├── README.md                                         # Project Documentation
